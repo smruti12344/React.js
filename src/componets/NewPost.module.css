@@ -1,0 +1,79 @@
+
+.form{
+background-color: #6233b9;
+  padding: 1rem;
+  width: 30rem;
+  margin: 2rem auto;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  }
+  div{
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+    
+  }
+  label{
+    margin-bottom: 0.5rem;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: start;
+  }
+  .text{
+    padding: 1rem;
+    border-radius: 10px;
+    opacity: 0.6;
+    outline: none;
+    max-width: 29rem;
+  }
+  .text:focus{
+    border: 1px solid white;
+    box-shadow: 0 0 10px 5px  white;
+    outline: auto;
+  }
+  .author{
+    font-size: 2.3rem;
+    border-radius: 10px;
+    outline: none;
+    opacity: 0.7;
+  }
+  .author:focus{
+    border: 1px solid white;
+    box-shadow: 0 0 10px 5px  white;
+    outline: auto;
+  }
+  .btnGroup{
+    display: flex;
+    flex-direction: row;
+    gap: 3px;
+    justify-content: flex-end;
+  }
+  
+  .modernbutton {
+    background-color: rgba(98, 0, 234, 0.5);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.modernbutton:hover {
+    background-color: #3700b3;
+    transform: scale(1.05);
+}
+.canBtn{
+  background-color: rgba(0, 0, 0, 0.3);
+}
+.canBtn:hover{
+  background-color: black;
+}
+
+.modernbutton:active {
+    background-color: #03dac5;
+    transform: scale(0.95);
+}

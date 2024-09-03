@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import classes from './NewPost.module.css';
 
-function NewPost(props) {
+function NewPost({onClose,addData}) {
   const[formData,setFormData] = useState({name:'',body:''});
   function authorChangeHandler(e){
        setFormData({
@@ -19,8 +19,9 @@ function NewPost(props) {
   }
   function formHandler(){
   //  alert(JSON.stringify(formData));
+  addData(formData);
    alert("Data Submitted Successfully");
-   props.onClose();
+   onClose();
   }
   
   return (
@@ -50,7 +51,7 @@ function NewPost(props) {
         <button
           type="button"
           className={`${classes.modernbutton} ${classes.canBtn}`}
-          onClick={props.onClose}
+          onClick={onClose}
         >
           Cancel
         </button>

@@ -24,7 +24,7 @@ function App() {
       <MainHeader onCreatePost={showModalHandler} />
       <main>
         <div>
-          <h1>Welcome to my world</h1>
+          {/* <h1>Welcome to my world</h1> */}
           <PostList isPosting={modalVisible} hideModal={hideModalHandler} />
         </div>
       </main>

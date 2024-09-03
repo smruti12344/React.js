@@ -5,32 +5,31 @@ import NewPost from './NewPost';
 import Modal from './Module';
 
 function PostList(props) {
-    const[enterBody,setEnterBody] = useState('');
-    const[author,setAuthor] = useState('');
-    
-
-    function bodyChangeHandler(e){
-      // alert(e.target.value);
-      setEnterBody(e.target.value);
-    }
-    function authorChangeHandler(e){
-      // alert(e.target.value);
-      setAuthor(e.target.value);
-    }
-    
+  const [posts,setPosts] = useState([]);
+   function dataHandler(formData){
+    setPosts((existingPost)=>[formData,...existingPost]);
+    alert(JSON.stringify(formData));
+   }
+        
     return (
        <>
        {props.isPosting && (
         <Modal onClose={props.hideModal} >
-        <NewPost onClose={props.hideModal} 
-        onBodyChange={bodyChangeHandler} 
-        onAuthorChange={authorChangeHandler}/>
+        <NewPost onClose={props.hideModal}  
+         addData={dataHandler}/>
         </Modal>
        )}
        <div className={styles.postContainer}>
-        
-            <Post author="Lipu" body="Next.js course." />
-            <Post  body={enterBody} author={author} />
+        {
+          posts.length>0 ?(
+          posts.map((post)=>(
+            <Post  author={post.name} body={post.body} />
+          ))
+          ) : (<p>No post found...!</p>)
+        }
+      
+           
+         
         </div>
        </>
     );
